@@ -16,4 +16,12 @@ const showInfoImgs = id =>
 const showParamImgs = id =>
   axios.get(`/api/v1/param-imgs/${id}`).then(res => res.data)
 
-export { showInfoImgs, showParamImgs }
+//添加商品概述的图片
+const createInfoImgs = form =>
+  axios.post(`/api/v2/info-imgs`, form).then(res => res.data)
+
+//读取商品参数的图片
+const createParamImgs = form =>
+  axios.post(`/api/v2/param-imgs`, form).then(res => res.data)
+
+export { showInfoImgs, showParamImgs, createInfoImgs, createParamImgs }
